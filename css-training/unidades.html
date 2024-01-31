@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        /* Depende de las dimensiones de lo que vemos en pantalla
+        width: 50vw;
+        height: 50vh;*/
+
+        /*
+        Dependen de las dimensiones del padre
+        width: 50%;
+        height: 50%;*/
+
+        /* 
+        Ya no son absolutas pero se siguen considerando como absolutas */
+        width: 250px;
+        height: 250px;
+        padding: 7px;
+        border: 3px solid black;
+        margin: 16px;
+        background: red;
+        /* Si el valor fuera context-box, entonces el tamaño se base en el size del padding, border y dimensions  */
+        box-sizing: border-box; /* Obliga a que el tamaño de la caja sea exactamente lo que se especifica en width and heigth */
+      }
+
+      body {
+        margin: 0;
+        background: #09f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- El span utiliza el display in line que permit empuja los elementos de izquierda a izquierda -->
+    <!-- <span>Hola</span>
+    <span>Hola</span>
+    <span>Hola</span> -->
+    <!-- Div utiliza el display in block que que empuja los elementos de arriba hacia abajo -->
+    <div class="container"></div>
+  </body>
+</html>

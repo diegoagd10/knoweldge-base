@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            padding: 10px;
+            background: lightsalmon;
+            border: 3px solid black;
+            border-radius: 10px;
+            display: grid;
+            /* auto: El navegador decide cual es el valor de la columna.*/
+            /* NOTA: fr solo funciona con grid. */
+            /* grid-template-columns: 1fr 1fr; 1fr -> 100% espacio */
+            /* grid-template-columns: repeat(3, 1fr); Esto es equivalente a 1fr 1fr 1fr */
+            
+            /* Esto es equivalente a decir que un 33.33% del espacio sea menor de 100px, se va a quedar en 100px*/
+            grid-template-columns: minmax(200px, 1fr) 1fr 1fr; /* minmax te permite definit un minimo y un maximo para una columna */
+            
+            /* Define el tamano de cada fila */
+            /*grid-template-rows: 100px 50px 30px 100px;*/
+
+            grid-auto-rows: 100px; /* Define el tamano de cada fila */
+            grid-auto-flow: row; /* Valor por defecto */
+
+            gap: 12px;
+            height: 600px;
+            justify-items: start; /* El contenido se alinea a la izquierda */
+            justify-items: center; /* El contenido se alinea al centro */
+            justify-items: end; /* El contenido se alinea a la derecha */
+            justify-items: stretch; /* Valor por defecto. El contenido se ajusta al tamano de la celda */
+
+            align-items: start; /* El contenido se alinea a la parte superior */
+            align-items: center; /* El contenido se alinea al centro */
+            align-items: end; /* El contenido se alinea a la parte inferior */  
+            align-items: stretch; /* Valor por defecto. El contenido se ajusta al tamano de la celda */
+
+            justify-content: center;
+            align-content: center;
+        }
+
+        .container div {
+            background: lightblue;
+            border: 2px solid #09f;
+            box-sizing: border-box;
+            border-radius: 6px;
+            padding: 2px;
+        }
+
+        .container :first-child {
+            background: lightgreen;
+            border: 2px solid green;
+            /* Permite definir donde empieza y donde termina el elemento*/
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start:1;
+            grid-row-end: 3;
+
+            grid-column-start: span 1;
+            grid-row-start:span 2;
+        }
+	
+	.container: nth-child(10) {
+	    background: blue;
+	}
+    </style>
+    <title>Grid</title>
+</head>
+
+<body>
+    <section class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+    </section>
+</body>
+
+</html>

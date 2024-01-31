@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        /* color: rgb(0 0 0 / 50%);  moderno */
+        /* color: hsl(60, 100%, 44%); */
+        /* color: oklch(lightness chroma hue); */
+        /* color: #09f; #0099ff */
+
+        /* color: #09f;
+            border-width: 1px;
+            border-style: solid;
+            border-color: currentColor; Use the of the parent */
+        color: #09f;
+      }
+
+      body {
+        background: #ade0e2;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+
+      .link {
+        color: red;
+      }
+
+      .link:hover {
+        color: yellow;
+        outline: 1px solid red;
+      }
+
+      .link:active {
+        color: green;
+      }
+
+      /* .description {
+            border: 1px solid red;
+        } */
+
+      .description .bold {
+        color: blue;
+      }
+
+      .secondary .bold {
+        color: red;
+      }
+
+      article {
+        font-size: 24px;
+      }
+
+      article > p {
+        color: blue;
+      }
+
+      p ~ span {
+        color: red;
+      }
+
+      .first + .second {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Portfolio de @midudev</h1>
+    <nav>
+      <a class="link" href="#experiencia">Experiencia</a>
+      <a class="link" href="#proyectos">Proyectos</a>
+      <a class="link" href="#contacto" target="_blank"></a>
+    </nav>
+    <main>
+      <p class="description">
+        +15 años de experiencia como <strong>Ingeniero de Software</strong>.
+        Create y divulgador de programación.
+      </p>
+
+      <h2>Otro ejemplo de selctores:</h2>
+      <strong>La frase que te cambiará la vida</strong>
+
+      <p class="description">
+        Joven empozoñado de <strong class="bold">tequila</strong>, menuda
+        <strong class="bold">figurota</strong>!
+      </p>
+
+      <p class="secondary">
+        Joven empozoñado de <strong class="bold">tequila</strong>, menuda
+        <strong class="bold">figurota</strong>!
+      </p>
+
+      <h2>Otro ejemplo de selctores</h2>
+      <article>
+        <p>Este es el contenido del articulo</p>
+        <p>Este es el contenido del articulo</p>
+        <footer>
+          <p>Escrito por midudev</p>
+        </footer>
+        <p>Este es el contenido del articulo</p>
+      </article>
+
+      <h2>Otro ejemplo de selctores</h2>
+      <article>
+        <span>This is not red because it appears before any paragraph.</span>
+        <p>Here is a paragraph</p>
+        <span>This is read because is AFTER the p</span>
+        <br />
+        <span>This is read because is AFTER the p</span>
+        <br />
+        <span>This is read because is AFTER the p</span>
+      </article>
+
+      <h2>Otro ejemplo de selctores</h2>
+      <article>
+        <p class="first">Here is a paragraph</p>
+        <span class="second"
+          >Tiene que ser el hermando siguiente inmediato para que este en verde.
+        </span>
+      </article>
+    </main>
+  </body>
+</html>

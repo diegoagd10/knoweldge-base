@@ -1,0 +1,447 @@
+<!-- Indica la version de HTML 5 -->
+<!doctype html>
+<!-- Contiene todo el contenido del documento -->
+<html lang="en">
+
+<!-- Sirve para cargar metadatos y estilos -->
+
+<head>
+  <!-- UTF-8 Permite que se vean los acentos y emojis -->
+  <meta charset="UTF-8">
+  <!-- Permite que el ancho del documento sea igual al ancho del dipositivo donde se consume el documento-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML</title>
+
+  <!-- Agrega una descripcion para que aparesca en los resultados de busqueda -->
+  <meta name="description" content="Pagina de entrenamiento para repasar los temas de HTML">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Curso de HTML">
+  <meta property="og:description" content="Pagina de entrenamiento para repasar los temas de HTML">
+  <meta property="og:image" content="/images/profile.jpg">
+  <meta property="og:image:alt" content="Una fotografia de Pikachu">
+
+
+  <!-- Indica si la pagina puede estar en otro idioma -->
+  <link rel="alternate" href="https://devmonster.dev/en" hreflang="es-GB">
+  <!-- Indica la pagina principal -->
+  <link rel="canonical" href="https://devmonster.dev/">
+
+  <!-- Le indica a los buscadores si el documento se debe indexar y si debe seguir los enlaces -->
+  <meta type="robots" content="index,follow">
+  <!-- Permite cambiar el color del navegador -->
+  <meta type="theme-color" content="#09f">
+
+  <!-- Permite agregar un icono a lado del titulo de la pestana del navegador -->
+  <link rel="icon" type="image/jpg" href="/images/profile.jpg">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Introduccion a HTML</h1> <!-- Titulo -->
+
+    <nav>
+      <a href="#queeshtml">Que es HTML?</a>
+      <a href="#etiquetasreemplazables">Etiquetas reemplazables</a>
+      <a href="#elhtmlsemantico">El HTML semantico</a>
+      <a href="https://www.youtube.com/watch?v=3nYLTiY5skU&t=3799s" target="_blank" rel="noreferrer">Curso de HTML de
+        MiduDev</a>
+    </nav>
+  </header>
+
+  <dialog id="dialog">
+    <h1>Sabias que peudes abrirr una modal asi?</h1>
+    <p>!Y es totalmente nativo!</p>
+    <button id="hide">Cerrar</button>
+  </dialog>
+
+  <button id="show">Mostrar modal</button>
+
+  <main>
+    <section>
+      <header>
+        <h2 id="queeshtml">Que es HTML?</h2>
+      </header>
+
+      <article>
+        <header>
+          <h3>Que significa cada letra?</h3>
+        </header>
+        <p>HyperText Markup Language.</p> <!-- Parafo -->
+      </article>
+
+      <article>
+        <header>
+          <h3>De que <strong>no se ocupa</strong>?</h3> <!-- Sub titulo -->
+        </header>
+        <ul> <!-- List no ordenada (Unordered list)-->
+          <li>De la presentacion. De esto se ocupa el CSS.</li>
+          <li>De la interactividad. De esto se ocupa el Javascript.</li>
+        </ul>
+      </article>
+
+      <article>
+        <header>
+          <h3>Entonces, cual es la responsabilidad de HTML?</h3>
+        </header>
+        <p>
+          Describir el contenido
+        </p>
+
+      </article>
+
+      <article>
+        <header>
+          <h3>Estructura:</h3>
+        </header>
+        <p>
+          <code>&lt;h1&gt;</code>Diego esta aprendiendo<code>&lt;/h1&gt;</code>
+          , donde:
+        </p>
+        <ul>
+          <li><strong>h1</strong> es la equiqueta</li>
+          <li>Y la etiqueta y su contenido, son el elemento.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <header>
+        <h2 id="etiquetasreemplazables">Etiquetas reemplazables</h2>
+      </header>
+
+      <article>
+        <header>
+          <h3>Que son?</h3>
+        </header>
+        <p>
+          Son etiquetas que no tienen contenido, solo tienen atributos.
+        </p>
+        <ul>
+          <li>
+            <code>&lt;img src="./images/profile.jpg"&gt;</code>
+          </li>
+          <li>
+            <code>&lt;br&gt;</code>
+          </li>
+          <li>
+            <code>&lt;input type="datetime-local"></code>
+          </li>
+        </ul>
+        <h4>Ejemplo de una etiqueta reemplazable:</h4>
+
+        <a download href="/images/profile.jpg">
+          <img width="200" height="200" title="Foto de Pikachu" alt="Una fotografia de Pikachu"
+            src="images/profile.jpg">
+        </a>
+      </article>
+
+      <article>
+        <header>
+          <h3>Que son los Atributos?</h3>
+        </header>
+        <p>Permiten asignarle caracteristicas a la etiqueta.</p>
+        <h4>Ejemplos de atributos:</h4>
+        <ul>
+          <li>
+            <strong>hidden:</strong> Permite esconder el elemento.
+          </li>
+          <li>
+            <strong>width/height:</strong> Permite controlar el tamano del elemento.
+          </li>
+          <li>
+            <strong>title:</strong> Permite agregar un tooltip a la imagen cuando el cursor esta por encima de la
+            imagen.
+          </li>
+          <li>
+            <strong>alt:</strong> Permite poner un texto alternativo cuando la imagen no se cargo.
+          </li>
+          <li>
+            <strong>src:</strong> Permite cargar una imagen/video/audio/url dependiendo de la etiqueta.
+          </li>
+          <li>
+            <strong>ref: [noreferrer]</strong> Evita que el navegador envie informacion de la pagina de origen a la
+            pagina destino.
+          </li>
+          <li>
+            <strong>role</strong> Permite agregar un rol semantico a una etiqueta.
+          </li>
+        </ul>
+        <strong>NOTE:</strong>
+        <p>
+          No todos los atributos estan disponibles para todas las etiquetas.
+          Hay algunas etiquetas que son exclusivas para ciertos elementos.
+        </p>
+      </article>
+    </section>
+
+    <section>
+      <header>
+        <h2 id="elhtmlsemantico">El HTML semantico</h2>
+      </header>
+
+      <article>
+        <header>
+          <h3>Que significa la palabra <strong>Semantico</strong>?</h3>
+        </header>
+        <p>Que tiene un significado.</p>
+      </article>
+
+      <article>
+        <header>
+          <h3>HTML semantico</h3>
+        </header>
+        <p>Describe el contenido del documento ayudando a indificar que es cada cosa
+          en el documento.
+        </p>
+        <h4>Ejemplos:</h4>
+        <ul>
+          <li>
+            La etiqueta p indica que se esta describiendo un parafo.
+          </li>
+          <li>
+            La etiqueta img indica que se esta describiendo una imagen.
+          </li>
+          <li>
+            La etiqueta h1 indica que se esta describiendo un titulo.
+          </li>
+          <li>
+            La etiqueta aside, ayuda a identificar contenido que esta
+            relacionado de manera indirecta con el contenido principal.
+          </li>
+          <li>
+            La etiqueta section agrupa diferentes bloques de contenido que
+            estan relacionados entre si.
+          </li>
+          <li>
+            La etiqueta article agrupa contenido que tiene sentido por si solo
+            (Puede ser exportado a otro sitio y seguira teniendo sentido).
+          </li>
+          <li>
+            La etiqueta footer contiene detalles finales relacionados al contenido precedente.
+          </li>
+          <li>
+            La etiqueta small es usada para mostrar informacion secundaria
+            como: Copyright y texto legal.
+          </li>
+          <li>
+            La etiqueta nav permite crear un seccion para navegar en el sitio web o documento.
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <header>
+        <h2>Atributos especiales de la etiqueta &lt;a&gt;</h2>
+      </header>
+
+      <article>
+        <header>
+          <h3>HREF con Protocolos</h3>
+        </header>
+
+        <ul>
+          <li>
+            Email: mailto:diegogomez211990@gmail.com
+          </li>
+          <li>
+            Telefono: tel:+7144951048
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <header>
+          <h3>Booleanos</h3>
+        </header>
+
+        <ul>
+          <li>
+            <strong>download:</strong> Permite abrir una ventana para descargar objetos
+            dentro de tu propio dominio.
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <header>
+        <h2>Atributos especiales de la etiqueta &lt;ol&gt;</h2>
+      </header>
+
+      <article>
+        <header>
+          <h3>type</h3>
+        </header>
+
+        <p>Permite cambiar el formato de la lista a:</p>
+
+        <ul>
+          <li>Numeros.</li>
+          <li>Letras mayusculas.</li>
+          <li>Letras minusculas.</li>
+          <li>Entre otros.</li>
+        </ul>
+
+        <section>
+          <header>
+            <h4>Ejemplos:</h4>
+          </header>
+
+          <article>
+            <header>
+              <h5>Numeros</h5>
+            </header>
+            <ol type="1">
+              <li>Primer elemento</li>
+              <li>Segundo elemento</li>
+              <li>Tercer elemento</li>
+            </ol>
+          </article>
+
+          <article>
+            <header>
+              <h5>Letras mayusculas</h5>
+            </header>
+            <ol type="A">
+              <li>Primer elemento</li>
+              <li>Segundo elemento</li>
+              <li>Tercer elemento</li>
+            </ol>
+          </article>
+
+          <article>
+            <header>
+              <h5>Letras minusculas</h5>
+            </header>
+            <ol type="a">
+              <li>Primer elemento</li>
+              <li>Segundo elemento</li>
+              <li>Tercer elemento</li>
+            </ol>
+          </article>
+        </section>
+
+      </article>
+
+      <article>
+        <header>
+          <h3>reversed</h3>
+        </header>
+
+        <p>Permite invertir el orden de la lista.</p>
+
+        <h4>Ejemplo:</h4>
+        <ol reversed>
+          <li>Primer elemento</li>
+          <li>Segundo elemento</li>
+          <li>Tercer elemento</li>
+        </ol>
+      </article>
+
+      <article>
+        <header>
+          <h3>Atributo value para la etiqueta &lt;li&gt;</h3>
+        </header>
+
+        <p>Permite cambiar la secuencia de la lista</p>
+
+        <h4>Ejemplo:</h4>
+        <ol>
+          <li>Primer elemento</li>
+          <li>Segundo elemento</li>
+          <li>Tercer elemento</li>
+          <li value="10">Cuarto elemento</li>
+          <li>Quinto elemento</li>
+          <li>Sexto elemento</li>
+          <li>Septimo elemento</li>
+        </ol>
+      </article>
+    </section>
+
+    <section>
+      <header>
+        <h2>Formularios</h2>
+      </header>
+
+      <article>
+        <header>
+          <h3>Formulario de contacto</h3>
+        </header>
+
+        <form method="post" action="/">
+          <fieldset>
+            <legend>Informacion personal</legend>
+
+            <label for="name">Nombre: </label>
+            <input type="text" id="name" name="name" placeholder="Diego gomez" required>
+
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
+          </fieldset>
+
+          <fieldset>
+            <legend>Informacion adicional</legend>
+
+            <label for="phone">Telefono: </label>
+            <input type="tel" id="phone" name="phone" placeholder="+17144951048" required>
+          </fieldset>
+
+          <button>Enviar contacto</button>
+        </form>
+      </article>
+    </section>
+
+    <section>
+      <header>
+        <h2>Preguntas frecuentes</h2>
+      </header>
+
+      <details open>
+        <summary>Que es un perro?</summary>
+        <p>Un perro es un animal domestico que se caracteriza por ser fiel a su amo.</p>
+      </details>
+
+      <details>
+        <summary>Que es un gato?</summary>
+        <p>Un gato es un animal domestico que se caracteriza por ser independiente.</p>
+      </details>
+
+      <details>
+        <summary>Que es un hamster?</summary>
+        <p>Un hamster es un animal domestico que se caracteriza por ser muy jugueton.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    Copyright @2024 - Pagina para aprender HTML
+
+    <a href="mailto:diegogomez21190@gmail.com">Enviame un correo</a>
+    <a href="tel:+7144951048">Llamar por telefono</a>
+  </footer>
+</body>
+
+<script>
+  window.show.addEventListener('click', () => {
+    window.dialog.showModal();
+  });
+
+  window.hide.addEventListener('click', () => {
+    window.dialog.close();
+  });
+</script>
+
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Juegos Populares de Pokémon</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+        }
+
+        main {
+            padding: 32px;
+        }
+
+        #progress {
+            position: fixed;
+            top: 0;
+            width: 0%;
+            background: red;
+            height: 1em;
+
+            animation: progress-grow auto linear;
+            /* Permite ejecutar la animacion a partir de otro elemento */
+            /* El primer parametro es el element a escuchar*/
+            /* El segundo parametro indica que scroll queremos escuchar: vertical (block) o horizontal*/
+            animation-timeline: scroll(root block);
+        }
+
+        @keyframes progress-grow {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="progress"></div>
+
+    <main>
+        <h1>Los Juegos de Pokémon más Populares</h1>
+
+        <h2>Introducción a los Juegos de Pokémon</h2>
+        <p>Los juegos de Pokémon son una franquicia de videojuegos creada por Satoshi Tajiri y Ken Sugimori,
+            desarrollada por Game Freak y publicada por Nintendo y The Pokémon Company. Desde su debut en 1996, los
+            juegos de Pokémon se han convertido en una de las franquicias de videojuegos más exitosas de todos los
+            tiempos.</p>
+
+        <h2>Pokémon Rojo y Azul (Pokémon Red and Blue)</h2>
+        <p>Los juegos Pokémon Rojo y Azul, lanzados originalmente en 1996 para la Game Boy, fueron las primeras entregas
+            de la serie. Estos juegos permitieron a los jugadores embarcarse en una emocionante aventura para atrapar y
+            entrenar a más de 150 Pokémon. Pokémon Rojo y Azul establecieron las bases para la exitosa franquicia y
+            siguen siendo amados por los fanáticos de todas las edades.</p>
+
+        <h2>Pokémon Oro y Plata (Pokémon Gold and Silver)</h2>
+        <p>Con el lanzamiento de Pokémon Oro y Plata en 1999, la serie introdujo 100 nuevos Pokémon y una región
+            completamente nueva para explorar. Estos juegos también introdujeron características innovadoras, como el
+            reloj interno en tiempo real y la posibilidad de criar Pokémon, lo que los convirtió en un gran avance para
+            la serie.</p>
+
+        <h2>Pokémon Rubí y Zafiro (Pokémon Ruby and Sapphire)</h2>
+        <p>Pokémon Rubí y Zafiro, lanzados en 2002 para la Game Boy Advance, llevaron la serie a una nueva generación de
+            hardware. Con gráficos mejorados y una región tropical llamada Hoenn, estos juegos continuaron atrayendo a
+            jugadores de todas las edades con nuevos desafíos y emocionantes batallas.</p>
+
+        <h2>Pokémon Go</h2>
+        <p>Pokémon Go, lanzado en 2016 para dispositivos móviles, revolucionó la forma en que las personas juegan a
+            Pokémon. Utilizando la realidad aumentada, este juego permitió a los jugadores explorar el mundo real
+            mientras atrapaban Pokémon en sus dispositivos móviles. Se convirtió en un fenómeno global y sigue siendo
+            popular hasta el día de hoy.</p>
+
+        <h2>Pokémon Espada y Escudo (Pokémon Sword and Shield)</h2>
+        <p>Lanzados en 2019 para la Nintendo Switch, Pokémon Espada y Escudo introdujeron a los jugadores a la región de
+            Galar y a una nueva generación de Pokémon. Estos juegos incorporaron batallas en línea, incursiones Max Raid
+            y gráficos de alta calidad que los convirtieron en un éxito entre los fanáticos de Pokémon.</p>
+
+        <h2>Conclusión</h2>
+        <p>La franquicia de Pokémon ha perdurado a lo largo de los años debido a su increíble diversidad de juegos.
+            Desde los clásicos juegos de Game Boy hasta las emocionantes experiencias en dispositivos móviles, Pokémon
+            ha dejado una marca indeleble en la cultura pop y sigue siendo una de las franquicias más queridas en el
+            mundo de los videojuegos.</p>
+
+        <footer>
+            <p>Este sitio es un tributo a pokemon.</p>
+        </footer>
+    </main>
+</body>
+</html>

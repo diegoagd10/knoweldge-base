@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Animacion</title>
+    <style>
+        img {
+            margin: 100px 0 0 100px;
+            width: 120px;
+            height: 120px;
+            /*Define la animacion a ejecutar*/
+            animation-name: mover;
+            /*Define la duracion de la animacion*/
+            animation-duration: 750ms;
+            
+            animation-timing-function: linear;
+            /* Permite definir el numero de pasos para ejecutar la animacion */
+            animation-timing-function: steps(5);
+            
+            animation-iteration-count: infinite;
+            
+            /* Valor por defecto */
+            animation-fill-mode: none;
+            /* El objeto se queda en la posicion inicial despues de la animacion*/
+            animation-fill-mode: backwards;
+            /* El objeto se queda en la posicion final despues de la animacion*/
+            animation-fill-mode: forwards;
+            /* El objeto se queda en la posicion inicial antes de la animacion*/
+            animation-fill-mode: both;
+
+            /* Valor por defecto */
+            animation-direction: normal;
+            /* Permite mover la animacion de fin a inicio*/
+            animation-direction:reverse;
+            /* Permite mover la animacion alternamente */
+            animation-direction: alternate;
+            /* Permite mover la animacion alternamente, empezando del fin al inicio*/
+            animation-direction: alternate-reverse;
+
+            /* Permite especificar el tiempo de espera antes de que se ejecute la animacion*/
+            animation-delay: 100ms;
+
+            /*Eso es equivalente a todo lo de arriba*/
+            animation: mover 2s linear infinite alternate;
+
+            /* Tambien se pueden convinar varias animaciones */
+            animation:
+                mover 2s linear both,
+                agrandar 1s linear 2s both;
+        }
+
+        img:hover {
+            /* Permite pausar la animacion */
+            animation-play-state: paused;
+            opacity: 0.7;
+            filter: contrast(150%);
+            cursor: progress;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        @keyframes mover {
+            to {
+                /* Mueve el objeto 100px sobre el eje x*/
+                transform: translateX(200px);
+            }
+        }
+
+        @keyframes agrandar {
+            0% {
+                scale: 1;
+            }
+
+            25% {
+                scale: 1.4;
+            }
+
+            50% {
+                scale: 2;
+            }
+
+            75% {
+                scale: 1.6;
+            }
+
+            100% {
+                scale: 2;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img
+        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.Dbym3-4lN747bsbQS7xTEgHaHa%26pid%3DApi&f=1&ipt=76c5870784d96e9d758c62bb6ba53874b5bd0882fc3d36d9d7996661fd5c1cf0&ipo=images" />
+</body>
+
+</html>

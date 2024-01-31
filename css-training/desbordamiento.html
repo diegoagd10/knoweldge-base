@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 150px;
+        height: 150px;
+        padding: 10px;
+        font-size: 40px;
+        background: white;
+        box-sizing: border-box; /* Obliga a que el tamaño de la caja sea exactamente lo que se especifica en width and heigth */
+        /* overflow: visible; Default. Esto hace que el contenido se salga de la caja si el tamaño es mayor */
+        /* overflow: hidden; Esto hace que el contenido se oculte si el tamaño es mayor */
+        /* overflow: scroll; Esto hace que el contenido se oculte si el tamaño es mayor y se agregue un scroll */
+        /* overflow: auto; Esto hace que el contenido se oculte si el tamaño es mayor y se agregue un scroll solo si es necesario */
+
+        overflow: hidden;
+        text-overflow: ellipsis; /* Esto hace que el texto se corte y se agregue puntos suspensivos cuando overflow es hidden */
+        text-overflow: clip; /* Default. Esto hace que el texto se corte cuando overflow es hidden */
+      }
+
+      body {
+        margin: 0;
+        background: #09f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- El span utiliza el display in line que permit empuja los elementos de izquierda a izquierda -->
+    <!-- <span>Hola</span>
+    <span>Hola</span>
+    <span>Hola</span> -->
+    <!-- Div utiliza el display in block que que empuja los elementos de arriba hacia abajo -->
+    <section class="container">CSS IS AWESOME</section>
+  </body>
+</html>

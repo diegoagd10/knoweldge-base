@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(
+                /* Define el numero de columnas dependendiendo el tamano del layout. 
+                   Este deja las columnas vacias si no hay suficiente contenido. */    
+                auto-fill,
+                minmax(100px, 1fr)
+            );
+            gap: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        img {
+            border-radius: 8px;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    <title>Bento</title>
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.kuz8dG0qWTwZ9PwxZTUbvgHaKe%26pid%3DApi&f=1&ipt=dba3329c4ca952bf512b5ed159d412becbb99d0ad1338582545ca263c69a9f83&ipo=images" alt="One Piece Film Red">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.kuz8dG0qWTwZ9PwxZTUbvgHaKe%26pid%3DApi&f=1&ipt=dba3329c4ca952bf512b5ed159d412becbb99d0ad1338582545ca263c69a9f83&ipo=images" alt="One Piece Film Red">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.kuz8dG0qWTwZ9PwxZTUbvgHaKe%26pid%3DApi&f=1&ipt=dba3329c4ca952bf512b5ed159d412becbb99d0ad1338582545ca263c69a9f83&ipo=images" alt="One Piece Film Red">
+    </div>
+</body>
+
+</html>

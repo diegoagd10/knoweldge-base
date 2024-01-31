@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        border: 5px solid black;
+        width: 400px;
+        height: 400px;
+        box-sizing: border-box;
+        position: relative; /* Crea un punto relativo para que los elementos hijos se posicionen de acuerdo a este punto */
+      }
+
+      .container1 {
+        background: #09f;
+        width: 200px;
+        height: 200px;
+        /* position: static; Default. Hace que se ubique en la ubicacion por defecto defina por el navegador */
+        /* Util para chats o cosas que siempre deben estar visibles 
+        position: fixed; Hace que se ubique en la ubicacion definida por el usuario usando top, left, right y bottom basandose en el punto relativo de la pantalla. En otras palabras, siempre es visible.*/
+        /* position: sticky; Usa como punto relativo al padre y hace que se quede en pantalla hasta que choca con con el otro limite del padre*/
+        position: absolute; /* Hace que se ubique en la ubicacion definida por el usuario usando top, left, right y bottom */
+        top: 0;
+        right: 0;
+
+        /* Centrar el elemento */
+      }
+
+      /* Centrar el elemento para modales */
+      .container {
+        background: #09f;
+        width: 200px;
+        height: 200px;
+        position: absolute; /* Hace que se ubique en la ubicacion definida por el usuario usando top, left, right y bottom */
+        inset: 0; /* Es lo mismo que top, left, right y bottom en 0 */
+        margin: auto; /* Eso hace que el elemento se centre cuando top, left, right y bottom son 0 */
+      }
+
+      body {
+        background: rgb(145, 192, 223);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="parent">
+      <div class="container">container</div>
+    </section>
+    <section class="parent">
+      <div class="container">container</div>
+    </section>
+    <section class="parent">
+      <div class="container">container</div>
+    </section>
+    <section class="parent">
+      <div class="container">container</div>
+    </section>
+    <section class="parent">
+      <div class="container">container</div>
+    </section>
+  </body>
+</html>

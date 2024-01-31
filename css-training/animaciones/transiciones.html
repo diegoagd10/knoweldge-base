@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transiciones</title>
+    <style>
+        .pulser {
+            width: 30px;
+            height: 30px;
+            background: #09f;
+            border-radius: 50%;
+            position: relative;
+            /* La transicion debe ir en el estado original*/
+            transition: 2s; /*La transicion se ejecuta en el tiempo especificado*/
+            /*Transicionar las sombras impacta el performance, no las animes si puedes*/
+            transition-property: background, box-shadow, scale; /*Permite especificar las propiedades que se quieren transicionar*/
+            transition-timing-function: linear; /*Valor por defecto. Permite especificar la curva de la transicion*/
+            transition-timing-function: ease-in; /*El inicio de la animacion es mas rapido que el regreso*/
+            transition-timing-function: ease-out; /*El regreso de la animacion es mas rapido que el inicio*/
+            transition-timing-function: ease; /*El inicio y el regreso de la animacion es mas rapido que el centro*/
+            transition-timing-function: steps(100); /*Permite especificar el numero de pasos que se quieren en la animacion*/
+            transition-delay: 200ms; /*Permite especificar el tiempo de espera antes de que se ejecute la animacion*/
+
+            /*Lo siguiente es equivalente a todo lo que se hizo arriba*/
+            transition: 
+                background 300ms ease,
+                scale 500ms ease-in-out,
+                box-shadow 1s ease;
+        }
+
+        .pulser:hover{
+            scale: 2;
+            background: red;
+            box-shadow: 0 0 10px purple;
+            transition-duration: 1s;
+        }
+
+        /* Permite desactivar las animaciones cuando el usuario
+            en el OS ha desactivado las animaciones.
+            Tener eso en consideracion para personas
+            sensibles al moviento en paginas webs.*/
+        @media (prefers-reduced-motion: reduce) {
+            .pulser {
+                transition: none;
+            }
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+            min-height: 50vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="pulser"></div>
+</body>
+</html>

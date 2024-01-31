@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: rgb(145, 192, 223);
+      }
+
+      .parent {
+        display: flex;
+        /* flex-direction: row; Por defecto. Apilas los elementos de forma horizontal */
+        /* flex-direction: row-reverse; Apilas los elementos de forma horizontal pero en reversa */
+        /* flex-direction: column; Apilas los elementos de forma vertical */
+        /* flex-direction: column-reverse; Apilas los elementos de forma vertical pero en reversa */
+        /* direction: rtl; Esto hace que el orden de los elementos sea de derecha a izquierda */
+        /* writing-mode: vertical-rl; Esto hace que el orden de los elementos sea de arriba hacia abajo */
+        flex-direction: row;
+        /* flex-wrap: nowrap; Por defecto. Si los hijos no caben, te permito que los encojas por iguales hasta que quepan  */
+        /* flex-wrap: wrap; Si un hijo no cabe, te permito que hagas un salto de linea */
+        flex-wrap: nowrap;
+        border: 4px solid black;
+        width: 200px;
+        background: white;
+      }
+
+      .item {
+        border: 1px solid;
+        opacity: 0.9;
+        width: 50px;
+        height: 100px;
+        background: #09f;
+
+        flex-grow: 0; /* Por defecto. Los hijos no crecen */
+        flex-shrink: 1; /* Por defecto. Los hijos se encogen segun su flex-basis */
+        flex-basis: 200px; /* Por defecto. Los hijos tienen un tamaño base en auto */
+
+        /* Esto es equivalente a escribir flex:auto */
+        flex-grow: 1; /* Por defecto. Los hijos crecen */
+        flex-shrink: 1; /* Por defecto. Los hijos se encogen segun su flex-basis */
+        flex-basis: auto; /* Por defecto. Los hijos tienen un tamaño base en auto */
+
+        /* Esto hace que todos los hijos tengan el mismo ancho (flex: 1) */
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+      }
+
+      .item:first-child {
+        background: yellow;
+        order: 2; /* Esto hace que el elemento se ubique en la posicion 2 */
+        flex: 2; /*Esto es relativo, si el valor es 2, entonces el hijo tendra el doble de tamaño*/
+      }
+
+      .item:nth-child(2) {
+        background: green;
+        order: 3;
+      }
+
+      .item:last-child {
+        background: red;
+        order: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="parent">
+      <div class="item">primero</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </section>
+  </body>
+</html>
