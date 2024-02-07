@@ -1,4 +1,6 @@
 export function WinnerDialog({ winner, restartGame }) {
+  if (winner === null) return null;
+
   const message = winner === "Draw" ? "It's a Draw!" : `Player ${winner} wins`;
 
   const handleClick = () => restartGame();
@@ -10,7 +12,7 @@ export function WinnerDialog({ winner, restartGame }) {
           <h2>{message}</h2>
         </header>
         <footer>
-          <button className="winner-restart-btn" onClick={handleClick}>
+          <button className="button" onClick={handleClick}>
             New Game
           </button>
         </footer>

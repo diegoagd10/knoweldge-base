@@ -3,23 +3,23 @@ import { Instructions } from "./Instructions";
 import { Square } from "./Square";
 import { Turns } from "./Turns";
 import { WinnerDialog } from "./WinnerDialog";
-import { PLAYERS, WINNERS_COMBOS } from "./Constants";
-
-function checkWinner(board) {
-  for (const combo of WINNERS_COMBOS) {
-    const [a, b, c] = combo;
-    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-      return true;
-    }
-  }
-  return false;
-}
+import { PLAYERS, TEXTS } from "./constants";
+import {
+  checkDraw,
+  checkWinner,
+  clearGame,
+  loadBoard,
+  loadPlayer,
+  loadWinner,
+  saveGame,
+  saveWinner,
+} from "./logic/board";
 
 function App() {
-  const [moves, setMoves] = useState(0);
-  const [winner, setWinner] = useState(null);
-  const [player, setPlayer] = useState(PLAYERS.X);
-  const [board, setBoard] = useState(Array(9).fill(null));
+  // useState is asynchronous, so local storage is accessed asynchronously
+  const [player, setPlayer] = useState(loadPlayer);
+  const [board, setBoard] = useState(loadBoard);
+  const [winner, setWinner] = useState(loadWinner);
 
   const updateBoard = (index) => {
     if (board[index] || winner) return;
@@ -28,34 +28,35 @@ function App() {
     newBoard[index] = player;
     setBoard(newBoard);
 
-    const newMove = moves + 1;
-    setMoves(newMove);
+    const nextPlayer = player === PLAYERS.X ? PLAYERS.O : PLAYERS.X;
+    setPlayer(nextPlayer);
+
+    saveGame(newBoard, nextPlayer);
 
     if (checkWinner(newBoard)) {
       setWinner(player);
+      saveWinner(player);
       return;
     }
 
-    if (newMove === 9) {
-      setWinner("Draw");
+    if (checkDraw(newBoard)) {
+      setWinner(TEXTS.DRAW);
+      saveWinner(TEXTS.DRAW);
       return;
     }
-
-    const nextPlayer = player === PLAYERS.X ? PLAYERS.O : PLAYERS.X;
-    setPlayer(nextPlayer);
   };
 
   const restartGame = () => {
-    setMoves(0);
     setWinner(null);
     setBoard(Array(9).fill(null));
     setPlayer(PLAYERS.X);
+    clearGame();
   };
 
   return (
     <main className="container">
       <h1>Tic-tac-toe</h1>
-      <Instructions />
+      <Instructions restartGame={restartGame} />
       <section className="board">
         {board.map((player, index) => {
           return (
@@ -66,7 +67,7 @@ function App() {
         })}
       </section>
       <Turns player={player} />
-      {winner && <WinnerDialog winner={winner} restartGame={restartGame} />}
+      <WinnerDialog winner={winner} restartGame={restartGame} />
     </main>
   );
 }

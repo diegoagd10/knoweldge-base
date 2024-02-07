@@ -16,4 +16,8 @@ const WINNERS_COMBOS = [
   [2, 4, 6],
 ];
 
-export { PLAYERS, WINNERS_COMBOS };
+const TEXTS = {
+  DRAW: "Draw",
+};
+
+export { PLAYERS, WINNERS_COMBOS, TEXTS };

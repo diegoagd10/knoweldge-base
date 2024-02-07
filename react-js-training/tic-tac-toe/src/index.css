@@ -45,13 +45,19 @@ body {
 
 .instructions-container {
   border: 2px solid #fff;
-  padding-inline: 10px;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
 }
 
 .instructions-description {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .board {
@@ -112,7 +118,7 @@ body {
 .winner-dialog {
   border: 1px solid #fff;
   background: #222;
-  width: 80%;
+  width: 320px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -124,15 +130,15 @@ body {
   font-size: 40px;
 }
 
-.winner-restart-btn {
+.button {
   font-size: 16px;
   padding: 20px 36px;
-  border: 1px solid #09f;
+  border: 1px solid #fff;
   border-radius: 5px;
-  background: #09f;
+  background: #222;
   color: #fff;
 }
 
-.winner-restart-btn:hover {
-  background: rgb(9, 143, 232);
+.button:hover {
+  background: rgba(43, 42, 42, 0.784);
 }

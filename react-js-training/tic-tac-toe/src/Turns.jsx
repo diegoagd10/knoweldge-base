@@ -1,4 +1,4 @@
-import { PLAYERS } from "./Constants";
+import { PLAYERS } from "./constants";
 
 export function Turns({ player }) {
   return (
