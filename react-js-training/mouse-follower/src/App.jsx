@@ -27,6 +27,13 @@ function App () {
     [enabled]
   )
 
+  useEffect(() => {
+    document.body.classList.toggle('no-cursor', enabled)
+    return () => {
+      document.body.classList.remove('no-cursor')
+    }
+  })
+
   const enableBall = () => {
     setEnabled(!enabled)
     setPosition({ x: 0, y: 0 })
