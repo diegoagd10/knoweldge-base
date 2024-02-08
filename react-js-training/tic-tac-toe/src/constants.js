@@ -1,7 +1,7 @@
 const PLAYERS = {
-  X: "❌",
-  O: "🟡",
-};
+  X: '❌',
+  O: '🟡'
+}
 
 const WINNERS_COMBOS = [
   [0, 1, 2],
@@ -13,11 +13,11 @@ const WINNERS_COMBOS = [
   [2, 5, 8],
 
   [0, 4, 8],
-  [2, 4, 6],
-];
+  [2, 4, 6]
+]
 
 const TEXTS = {
-  DRAW: "Draw",
-};
+  DRAW: 'Draw'
+}
 
-export { PLAYERS, WINNERS_COMBOS, TEXTS };
+export { PLAYERS, WINNERS_COMBOS, TEXTS }
