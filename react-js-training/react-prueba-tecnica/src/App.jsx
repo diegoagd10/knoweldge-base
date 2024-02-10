@@ -1,32 +1,30 @@
 import { useEffect, useState } from 'react'
+import { fetchRandomCatFact } from './services/facts'
+import { useFetchCatMessage } from './hooks/useFetchCatMessage'
 
-const RANDOME_CAT_FACT_API_URL = 'https://catfact.ninja/fact'
 const CAT_IMAGE_URL = 'https://cataas.com/cat/says/'
 
 export default function App () {
   const [fact, setFact] = useState(null)
-  const [message, setMessage] = useState(null)
+  const { message } = useFetchCatMessage({ fact })
 
   useEffect(() => {
-    fetch(RANDOME_CAT_FACT_API_URL)
-      .then((response) => response.json())
-      .then(({ fact }) => setFact(fact))
+    fetchRandomCatFact().then(setFact)
   }, [])
 
-  useEffect(() => {
-    if (fact === null) return
-
-    const message = fact.split(' ')[0]
-    setMessage(message)
-  }, [fact])
+  const getNewRandomCatFact = async () => {
+    const newFact = await fetchRandomCatFact()
+    setFact(newFact)
+  }
 
   return (
     <main>
       <h1>Meme de un Gato</h1>
+      <button onClick={getNewRandomCatFact}>Obtener nuevo hecho</button>
       {fact && <p>{fact}</p>}
       {message && (
         <img
-          src={`${CAT_IMAGE_URL}${message}`}
+          src={`${CAT_IMAGE_URL}${message}?fontSize=50&fontColor=white`}
           alt={`Esta imagen representa una foto de un gato mostrando la primera palabra del siguiente hecho: ${fact}`}
         />
       )}
