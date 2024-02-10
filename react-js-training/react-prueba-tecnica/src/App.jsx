@@ -1,31 +1,19 @@
-import { useEffect, useState } from 'react'
-import { fetchRandomCatFact } from './services/facts'
-import { useFetchCatMessage } from './hooks/useFetchCatMessage'
-
-const CAT_IMAGE_URL = 'https://cataas.com/cat/says/'
+import { useCatFact } from './hooks/useCatFact'
+import { useCatImage } from './hooks/useCatImage'
 
 export default function App () {
-  const [fact, setFact] = useState(null)
-  const { message } = useFetchCatMessage({ fact })
-
-  useEffect(() => {
-    fetchRandomCatFact().then(setFact)
-  }, [])
-
-  const getNewRandomCatFact = async () => {
-    const newFact = await fetchRandomCatFact()
-    setFact(newFact)
-  }
+  const { fact, refreshRandomCatFact } = useCatFact()
+  const { imageUrl } = useCatImage({ fact })
 
   return (
     <main>
       <h1>Meme de un Gato</h1>
-      <button onClick={getNewRandomCatFact}>Obtener nuevo hecho</button>
+      <button onClick={refreshRandomCatFact}>Obtener nuevo hecho</button>
       {fact && <p>{fact}</p>}
-      {message && (
+      {imageUrl && (
         <img
-          src={`${CAT_IMAGE_URL}${message}?fontSize=50&fontColor=white`}
-          alt={`Esta imagen representa una foto de un gato mostrando la primera palabra del siguiente hecho: ${fact}`}
+          src={imageUrl}
+          alt={`Imagen extraida de la primera palabra del siguiente hecho: ${fact}`}
         />
       )}
     </main>
