@@ -4,3 +4,10 @@
 4. Install react and react-dom: npm install react react-dom -E
 5. Create vite.config.js to enable react.
 6. Create point of entry for React JS.
+
+Despues de la prueba tecnica:
+
+1. Installar playwright para pruebas unitarias.
+    1.1 npm init playwright@latest
+2. Corret las pruebas:
+    2.1 npx playwright test
