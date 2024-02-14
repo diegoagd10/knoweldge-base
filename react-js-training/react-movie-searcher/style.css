@@ -1,0 +1,65 @@
+h1, h2, h3, h4, h5, h6,p {
+  margin: 0;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.main-container header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-form {
+  display: flex;
+}
+
+.search-form input {
+  align-self: center;
+}
+
+.main-container header h1 {
+  text-align: center;
+}
+
+.main-container form {
+  display: flex;
+  gap: 3px;
+  justify-content: space-between;
+}
+
+input {
+  width: 100%;
+  height: 36px;
+}
+
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.movie {
+  text-align: center;
+}
+
+.movie img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}
+
+.loading {
+  text-align: center;
+}

@@ -1,0 +1,92 @@
+useRef es una referencia mutable que persite a lo largo del ciclo de vida del componente.
+
+import { useRef } from 'react'
+
+Este cuando cambia, no provoca una nueva renderización.
+const inputRef = useRef()
+
+JSX:
+
+<div className='main-container'>
+    <header>
+    <h1>Movies</h1>
+    <form onSubmit={handleSubmit}>
+        <input ref={inputRef} placeholder='Movie to search...' onChange={() => { }} />
+        <button type='submit'>Search</button>
+    </form>
+    {loading && <p>Loading...</p>}
+    {error && <p>{error}</p>}
+    </header>
+
+    <main>
+    <Movies movies={movies} />
+    </main>
+</div>
+
+
+
+######################################################################
+
+Form validations with Javascript
+
+const handleSubmit = (event) => {
+    event.preventDefault()
+    const fields = new window.FormData(event.target)
+    const { query } = Object.fromEntries(fields)
+
+    console.log(query)
+}
+
+#######################################################################
+
+
+import { useState, useRef, useMemo } from 'react'
+import { searchMovies } from '../services/movies'
+
+export function useMovies ({ query, sort }) {
+  const [error, setError] = useState()
+  const [movies, setMovies] = useState([])
+  const [loading, setLoading] = useState(false)
+  const previousQuery = useRef()
+
+  const getMovies = () => {
+    if (query === previousQuery.current) return
+
+    setError(null)
+    setLoading(true)
+
+    searchMovies({ query })
+      .then(movie => {
+        setMovies(movie)
+        previousQuery.current = query
+      })
+      .catch((e) => setError(e.message))
+      .finally(() => {
+        setLoading(false)
+      })
+  }
+
+  // Esto evita que se ordenan las peliculas cuando el parametro query
+  // cambie de valor porque se memoriza el cambio
+
+  // Usa useMemo solo cuando se tenga que memorizar una operacion
+  // demasiado pesada como ordenar 1000 elementos por ejemplo. 
+  const sortedMovies = useMemo(() => {
+    return sort
+      ? [...movies].sort((a, b) => a.title.localeCompare(b.title))
+      : movies
+  // El metodo callbak de useMemo solo se ejecutara cuando las dependencias
+  // cambien de valor
+  }, [sort, movies])
+
+  return { movies: sortedMovies, loading, error, getMovies }
+}
+
+// Para metodos utiliza useCallbak
+
+#############################################################################
+
+OJO:
+
+Si los parametros de un Custom Hook cambian, todo lo que 
+forme parte del cuerpo del mismo se volvera a crear.
