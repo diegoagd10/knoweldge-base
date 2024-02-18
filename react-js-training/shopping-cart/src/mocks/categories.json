@@ -1,0 +1,30 @@
+[
+    {
+        "value": "all",
+        "name": "All"
+    },
+    {
+        "value": "home-decoration",
+        "name": "Home Decoration"
+    },
+    {
+        "value": "laptops",
+        "name": "Laptops"
+    },
+    {
+        "value": "smartphones",
+        "name": "Smartphones"
+    },
+    {
+        "value": "fragrances",
+        "name": "Fragrances"
+    },
+    {
+        "value": "skincare",
+        "name": "Skincare"
+    },
+    {
+        "value": "groceries",
+        "name": "Groceries"
+    }
+]
